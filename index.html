@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<link rel="icon" href="images/taskninja.png">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TaskOwner</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!--Navbar-->
+<nav class="navbar">
+    <div class="nav-links">
+        <a href="#home" class="nav-item">Home</a>
+        <a href="#tasks" class="nav-item">Tasks</a>
+        <a href="#timeline" class="nav-item">Timeline</a>
+    </div>
+</nav>
+
+<!--Landing Page-->
+<section id="home" class="landing-page">
+    <h1>Welocome to TaskOwner</h1>
+    <div class="landing-clock">
+        <div class="clock-container">
+            <div class="time-unit">
+                <div class="time-display">
+                    <span id="landing-hrs">00</span>
+                </div>
+                <div class="unit-label">HOURS</div>
+            </div>
+            <div class="separator">:</div>
+            <div class="time-unit">
+                <div class="time-display">
+                    <span id="landing-min">00</span>
+                </div>
+                <div class="unit-label">MINUTES</div>
+            </div>
+            <div class="separator">:</div>
+            <div class="time-unit">
+                <div class="time-display">
+                    <span id="landing-sec">00</span>
+                </div>
+                <div class="unit-label">SECONDS</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Tasks Section-->
+<section id="tasks">
+    <div class="container">
+        <div class="todo-app">
+            <h2>Task List <img src="images/icon.png"></h2>
+            <div class="row">
+                <input type="text" id="input-box" placeholder="Add Your Task">
+                <button onclick="addTask()">Add Task</button>
+            </div>
+
+            <ul id="list-container">
+            </ul>
+        </div>
+    </div>
+</section>
+
+
+<!-- Timeline Section-->
+<section id="timeline">
+    <p style="color:rgba(34, 66, 82, 0.9);">.</p>
+    <p style="color:rgba(34, 66, 82, 0.9);">.</p>
+    <p style="color:rgba(34, 66, 82, 0.9);">.</p>
+    <p style="color:rgba(34, 66, 82, 0.9);">.</p>
+
+    <div class="todo-app timeline-header" style="width: 300px; margin: 10px auto; padding: 10px;">
+        <h2>Timeline <img src="images/icon.png"></h2>
+    </div>
+<div class="timeline-container">
+    <div class="timeline">
+        <div class="timeline-line">
+            <!-- 24 hour markers -->
+            <div class="hour-markers">
+                <div class="hour-label">00:00</div>
+                <div class="hour-label">01:00</div>
+                <div class="hour-label">02:00</div>
+                <div class="hour-label">03:00</div>
+                <div class="hour-label">04:00</div>
+                <div class="hour-label">05:00</div>
+                <div class="hour-label">06:00</div>
+                <div class="hour-label">07:00</div>
+                <div class="hour-label">08:00</div>
+                <div class="hour-label">09:00</div>
+                <div class="hour-label">10:00</div>
+                <div class="hour-label">11:00</div>
+                <div class="hour-label">12:00</div>
+                <div class="hour-label">13:00</div>
+                <div class="hour-label">14:00</div>
+                <div class="hour-label">15:00</div>
+                <div class="hour-label">16:00</div>
+                <div class="hour-label">17:00</div>
+                <div class="hour-label">18:00</div>
+                <div class="hour-label">19:00</div>
+                <div class="hour-label">20:00</div>
+                <div class="hour-label">21:00</div>
+                <div class="hour-label">22:00</div>
+                <div class="hour-label">23:00</div>
+                <div class="hour-label">24:00</div>
+            </div>
+            <div class="timeline-track">
+            </div>
+        </div>
+    </div>
+    
+    <div class="task-details-panel">
+        <div id="task-details" class="hidden">
+            <h3>Task Details</h3>
+            <p id="detail-title"></p>
+            <p id="detail-time"></p>
+            <p id="detail-description"></p>
+        </div>
+    </div>
+
+    <div class="timeline-form">
+        <input type="text" id="task-name" placeholder="Task Title">
+        <textarea id="task-description" placeholder="Task Description / Subtasks" style="height: 484px;"></textarea>
+        <div class="time-input-group">
+            <input type="number" id="start-hours" placeholder="Time when start - H" min="0" max="23">
+            <span>:</span>
+            <input type="number" id="start-minutes" placeholder="Time when start - M" min="0" max="59">
+        </div>
+        <div class="duration-input-group">
+            <input type="number" id="duration-hours" placeholder="Length - Hours" min="0" max="23">
+            <span>h</span>
+            <input type="number" id="duration-minutes" placeholder="Length - Minutes" min="0" max="59">
+            <span>m</span>
+        </div>
+        <button onclick="addTimelineTask()">Add to Timeline</button>
+    </div>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
